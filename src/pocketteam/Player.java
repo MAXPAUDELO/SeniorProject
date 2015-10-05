@@ -73,7 +73,7 @@ public class Player {
         return ERA;
     }
     
-    public int getRBI(){
+    public int getRBI(int RBIs){
         return RBIs;
     }
     
