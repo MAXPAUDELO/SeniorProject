@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package pocketteam;
 
 /**
@@ -11,82 +7,109 @@ package pocketteam;
  */
 public class Player {
     
-    private String firstName; 
-    private String lastName;
-    private String position;
-    private String phoneNumber;
-    private String playerNumber;
-    private double batAverage;
-    private double sluggingPercentage;
-    private double ERA;
-    private int RBIs;
-    private int Saves;
-    private int Wins;
-    private int Losses;
+    private String m_FirstName; 
+    private String m_LastName;
+    private String m_Position;
+    private String m_PhoneNumber;
+    private String m_PlayerNumber;
+    private double m_BatAverage;
+    private double m_SluggingPercentage;
+    private double m_ERA;
+    private int m_RBIs;
+    private int m_Saves;
+    private int m_Wins;
+    private int m_Losses;
+    private int m_Hits;
+    private Stat calc;
     
     
     
     public Player(String first, String lastName, String position, String number){
         
-        ERA = 0;
-        RBIs = 0;
-        Saves = 0;
-        Wins = 0;
-        Losses = 0;
+        m_ERA = 0;
+        m_RBIs = 0;
+        m_Saves = 0;
+        m_Wins = 0;
+        m_Losses = 0;
     }
     
+    
+    public void setFirstName(String firstname){
+        m_FirstName = firstname;
+    }
     
     public String getFirstName(){
-        
-        return firstName;
+        return m_FirstName;
     }
     
+    
+    public void setLastName(String lastname){
+        m_LastName = lastname;
+    }
     
     public String getLastName(){
         
-        return lastName;
+        return m_LastName;
     }
    
+    public void setPosition(String position){
+        
+        m_Position = position;
+    }
+    
     public String getPosition(){
         
-        return lastName;
+        return m_Position;
+    }
+    
+    public void setPhoneNumber(String number){
+        m_PhoneNumber = number;
     }
     
     public String getPhoneNumber(){
         
-        return lastName;
+        return m_PhoneNumber;
+    }
+    
+    public void setPlayerNumber(String number){
+        m_PlayerNumber = number;
     }
     
     public String getPlayerNumber(){
-        return playerNumber;
+        return m_PlayerNumber;
     }
     
-    public double getBatAvg(){
-        return batAverage;
+    public double getBatAvg(int hits, int atBats){
+      m_BatAverage = calc.battingAverage(hits, atBats);
+      return m_BatAverage;
     }
     
     public double getSlugg(){
-        return sluggingPercentage;
+        return m_SluggingPercentage;
     }
     
     public double getERA(){
-        return ERA;
+        return m_ERA;
     }
     
-    public int getRBI(int RBIs){
-        return RBIs;
+    public int getRBI(int rbi){
+        return m_RBIs;
     }
     
-    public int getSaves(){
-        return Saves;
+    public int getSaves(int saves){
+        return m_Saves;
     }
     
-     public int getWins(){
-        return Saves;
+     public int getWins( int wins){
+        return m_Wins;
     }
      
      public int getLosses(){
-        return Losses;
+        return m_Losses;
     }
+     
+     public int getHits(int hits){
+         return m_Hits;
+     }//
     
 }//end Player
