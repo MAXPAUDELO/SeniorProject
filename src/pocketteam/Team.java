@@ -9,9 +9,26 @@ import java.util.ArrayList;
 public class Team {
     
     private ArrayList<Player> roster;
+    private String m_TeamName;
     
     public Team(){
         roster = new ArrayList<>();
+    }
+    
+    /**
+     * Sets the Team name
+     * @param name 
+     */
+    public void setTeamName(String name){
+        m_TeamName = name;
+    }
+    
+    /**
+     * Returns the Team Name
+     * @return 
+     */
+    public String getTeamName(){
+        return m_TeamName;
     }
     
     /**
