@@ -1,4 +1,10 @@
-
+/**
+ * 
+ * This is the Player Class. This class will hold a player's information such as 
+ * name, contact information,and player's statistics.
+ * 
+ * 
+ */
 package pocketteam;
 
 /**
@@ -12,6 +18,7 @@ public class Player {
     private String m_Position;
     private String m_PhoneNumber;
     private String m_PlayerNumber;
+    private String m_TeamName;
     private double m_BatAverage;
     private double m_SluggingPercentage;
     private double m_ERA;
@@ -33,71 +40,222 @@ public class Player {
         m_Losses = 0;
     }
     
-    
+    /**
+     * Sets first name of player
+     * @param firstname 
+     */
     public void setFirstName(String firstname){
         m_FirstName = firstname;
     }
     
+    /**
+     * Returns the player's first name
+     * @return 
+     */
     public String getFirstName(){
         return m_FirstName;
     }
     
-    
+    /**
+     * Sets the player's last name
+     * @param lastname 
+     */
     public void setLastName(String lastname){
         m_LastName = lastname;
     }
     
+    /**
+     * Returns the last name of player
+     * @return 
+     */
     public String getLastName(){
         
         return m_LastName;
     }
    
+    /**
+     * Sets the position of the player
+     * @param position 
+     */
     public void setPosition(String position){
         
         m_Position = position;
     }
     
+    /**
+     * Returns the position of the player
+     * @return 
+     */
     public String getPosition(){
         
         return m_Position;
     }
     
+    /**
+     * Sets the player's phone number
+     * @param number 
+     */
     public void setPhoneNumber(String number){
         m_PhoneNumber = number;
     }
     
+    /**
+     * Returns the players phone number
+     * @return 
+     */
     public String getPhoneNumber(){
         
         return m_PhoneNumber;
     }
     
+    /**
+     * Sets player's jersey number
+     * @param number 
+     */
     public void setPlayerNumber(String number){
         m_PlayerNumber = number;
     }
     
+    /**
+     * Returns player's Jersey number
+     * @return 
+     */
     public String getPlayerNumber(){
         return m_PlayerNumber;
     }
     
-    public double getBatAvg(int hits, int atBats){
-      m_BatAverage = calc.battingAverage(hits, atBats);
-      return m_BatAverage;
+    /**
+     * Set the Team name that the player is on
+     * @param name 
+     */
+    public void setTeamName(String name){
+        m_TeamName = name;
     }
     
+    /**
+     * Returns the Team that the player is on
+     * @return 
+     */
+    public String getTeamName(){
+        return m_TeamName;
+    }
+    
+    /**
+     * Calculates the player's batting average
+     * @param hits - number of hits
+     * @param atBats - number of at bats
+     * @return m_BatAverage
+     */
+    public void calcBatAvg(int hits, int atBats){
+      m_BatAverage = calc.battingAverage(hits, atBats);
+      
+    }
+    
+    /**
+     * Returns the batting average of the player
+     * @return 
+     */
+    public double getBatAvg(){
+        return m_BatAverage;
+    }
+    
+    /**
+     * Calculates the slugging percentage of a player
+     * @param singles
+     * @param doubles
+     * @param triples
+     * @param homeruns
+     * @param atBats 
+     */
+    public void calcSlugg(int singles, int doubles, int triples, int homeruns, int atBats){
+        m_SluggingPercentage = calc.sluggingPercentage(singles, doubles, triples, homeruns, atBats);
+    }
+    
+    /**
+     * Returns the slugging percentage of the player
+     * @return 
+     */
     public double getSlugg(){
         return m_SluggingPercentage;
     }
     
-    public double getERA(int runs, double innings){
-        return m_ERA = calc.getERA(runs, innings);
+    /**
+     * Calculates ERA of the player
+     * @param runs
+     * @param innings 
+     */
+    public void calcERA(int runs, double innings){
+        m_ERA = calc.getERA(runs, innings);
     }
     
+    /**
+     * Returns the player's ERA
+     * @return 
+     */
+    public double getERA(){
+        return m_ERA;
+    }
     
+    /**
+     * Sets the RBIs of the player
+     * @param rbi 
+     */
+    public void setRBI(int rbi){
+        m_RBIs = rbi;
+    }
     
+    /**
+     * Increments the player's RBIs by + 1
+     */
+    public void incrementRBIs(){
+        m_RBIs++;
+    }
+    
+    /**
+     * Decrements the players RBIs by - 1
+     */
+    public void decrementRBIs(){
+        m_RBIs--;
+    }
+   
+    /**
+     * Returns the current RBIs of the player
+     * @param rbi
+     * @return 
+     */
     public int getRBI(int rbi){
         return m_RBIs;
     }
     
+    
+    
+    /**
+     * Sets the Saves of the player
+     * @param saves 
+     */
+    public void setSaves(int saves){
+        m_Saves = saves;
+    }
+    
+    /**
+     * Increments the player's Saves by + 1
+     */
+    public void incrementSaves(){
+        m_Saves++;
+    }
+    
+    /**
+     * Decrements the players Saves by - 1
+     */
+    public void decrementSaves(){
+        m_Saves--;
+    }
+    
+    /**
+     * Returns the Saves of the players
+     * @param saves
+     * @return 
+     */
     public int getSaves(int saves){
         return m_Saves;
     }

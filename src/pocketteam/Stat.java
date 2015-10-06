@@ -1,4 +1,6 @@
-
+/**
+ * This is the Stat Class.
+ */
 package pocketteam;
 
 /**
@@ -45,12 +47,12 @@ public class Stat {
      * @return 
      */
     public double sluggingPercentage(int singles, int doubles, int triples, int homeruns, int atBats){
-       double slugging = 0;
+       
        int totalBases = 0;
        
         totalBases = singles + (doubles * 2) + (triples * 3) + (homeruns * 4);
         
-        return slugging = totalBases / atBats; 
+        return totalBases / atBats; 
     }
     
     
