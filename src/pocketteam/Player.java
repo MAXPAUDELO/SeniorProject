@@ -88,9 +88,11 @@ public class Player {
         return m_SluggingPercentage;
     }
     
-    public double getERA(){
-        return m_ERA;
+    public double getERA(int runs, double innings){
+        return m_ERA = calc.getERA(runs, innings);
     }
+    
+    
     
     public int getRBI(int rbi){
         return m_RBIs;
@@ -100,15 +102,95 @@ public class Player {
         return m_Saves;
     }
     
+    /**
+     * Sets number of wins the player has
+     * @param number 
+     */
+    public void setWins(int number){
+        m_Wins = number;
+    }
+    
+    /**
+     * Increments the players win by + 1
+     */
+    public void incrementWins(){
+        m_Wins++;
+    }
+    
+    /**
+     * Decrements the players wins by - 1
+     */
+    public void decrementWins(){
+        m_Wins--;
+    }
+    
+    /**
+     * Returns the number of wins the player has
+     * @param wins
+     * @return int
+     */
      public int getWins( int wins){
         return m_Wins;
     }
      
+     
+     /**
+     * Sets number of losses the player has
+     * @param number 
+     */
+    public void setLosses(int number){
+        m_Losses = number;
+    }
+    
+    /**
+     * Increments the players losses by + 1
+     */
+    public void incrementLosses(){
+        m_Losses++;
+    }
+    
+    /**
+     * Decrements the players losses by - 1
+     */
+    public void decrementLosses(){
+        m_Losses--;
+    }
+     
+    /**
+     * Returns the number of losses a player has
+     * @return 
+     */
      public int getLosses(){
         return m_Losses;
     }
      
-     public int getHits(int hits){
+     /**
+      * Sets a players hits
+      * @param hits - number hits for a player
+      */
+     public void setHits(int hits){
+         m_Hits = hits;
+     }
+     
+     /**
+      * Increments the current amount of hits by + 1
+      */
+     public void incrementHits(){
+         m_Hits++;
+     }
+     
+     /**
+      * Decrements the current amount of hits by - 1
+      */
+     public void decrimentHits(){
+         m_Hits--;
+     }
+    
+     /**
+      * Returns the current hits of the player
+      * @return 
+      */
+     public int getHits(){
          return m_Hits;
      }//
     

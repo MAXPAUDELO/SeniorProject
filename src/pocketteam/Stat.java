@@ -31,7 +31,7 @@ public class Stat {
      * @param innings - innings pitched by player
      * @return 
      */
-    public double getERA(int earnedRuns, int innings){
+    public double getERA(int earnedRuns, double innings){
         return (earnedRuns * 9) / innings;
     }
     
