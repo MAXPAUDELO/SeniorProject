@@ -10,8 +10,20 @@ package pocketteam;
 public class Stat {
     
     
+    private static Stat uniqueInstance;
+    
     
     public Stat(){
+        
+    }
+    
+    public static Stat getInstance(){
+        
+        if(uniqueInstance == null){
+            uniqueInstance = new Stat();
+        }
+        
+        return uniqueInstance;
         
     }
     
@@ -53,6 +65,12 @@ public class Stat {
         totalBases = singles + (doubles * 2) + (triples * 3) + (homeruns * 4);
         
         return totalBases / atBats; 
+    }
+    
+    public double onBasePercentage(){
+        double per = 0;
+        
+        return per;
     }
     
     

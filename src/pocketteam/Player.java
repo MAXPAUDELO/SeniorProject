@@ -27,7 +27,11 @@ public class Player {
     private int m_Wins;
     private int m_Losses;
     private int m_Hits;
-    private Stat calc;
+    private int m_Strikeouts_Pitcher;
+    private int m_Strikeouts_Batter;
+    private int m_Walks_Pitching;
+    private int m_Walks_Batter; 
+   
     
     
     
@@ -38,6 +42,8 @@ public class Player {
         m_Saves = 0;
         m_Wins = 0;
         m_Losses = 0;
+        
+      
     }
     
     /**
@@ -147,7 +153,7 @@ public class Player {
      * @return m_BatAverage
      */
     public void calcBatAvg(int hits, int atBats){
-      m_BatAverage = calc.battingAverage(hits, atBats);
+      m_BatAverage = Stat.getInstance().battingAverage(hits, atBats);
       
     }
     
@@ -168,7 +174,7 @@ public class Player {
      * @param atBats 
      */
     public void calcSlugg(int singles, int doubles, int triples, int homeruns, int atBats){
-        m_SluggingPercentage = calc.sluggingPercentage(singles, doubles, triples, homeruns, atBats);
+        m_SluggingPercentage = Stat.getInstance().sluggingPercentage(singles, doubles, triples, homeruns, atBats);
     }
     
     /**
@@ -185,7 +191,7 @@ public class Player {
      * @param innings 
      */
     public void calcERA(int runs, double innings){
-        m_ERA = calc.getERA(runs, innings);
+        m_ERA = Stat.getInstance().getERA(runs, innings);
     }
     
     /**
@@ -351,5 +357,10 @@ public class Player {
      public int getHits(){
          return m_Hits;
      }//
+     
+     public void setStrikeouts(){
+         
+         
+     }
     
 }//end Player
