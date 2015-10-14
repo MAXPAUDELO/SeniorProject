@@ -3,6 +3,8 @@
  */
 package pocketteam;
 
+import java.text.DecimalFormat;
+
 /**
  *
  * @author Justin Hyland
@@ -33,11 +35,16 @@ public class Stat {
      * @param atBats - number of atBats
      * @return 
      */
-    public double battingAverage(int hits, int atBats) {
+    public double battingAverage(double hits, double atBats) {
 
-        return hits / atBats;
+        double avg = (double) (hits / atBats);
+
+        DecimalFormat formatter = new DecimalFormat("0.000");
+
+        formatter.format(avg);
+        return avg;
     }//end battingAverage
-    
+
     
     /**
      * Returns the ERA of a player based on earned runs and innings pitched
